@@ -58,6 +58,14 @@ h2 {
   color: #006400;
 }
 
+.tentang-img {
+  display: block;
+  max-width: 100%;   /* Supaya gambar tidak melebihi lebar layar */
+  height: auto;
+  margin: 20px auto; /* Tengah dan ada jarak dengan teks */
+  border-radius: 8px; /* Opsional, biar sudut gambar agak melengkung */
+}
+
 .btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;
@@ -71,6 +79,20 @@ h2 {
 .btn:hover {
   background: #228B22;
 }
+
+ .container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+  h2 {
+      color: #09cb29;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
 
 /* Footer */
 footer {
