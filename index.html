@@ -6,6 +6,71 @@
   <title>Sephia Paper - Layanan</title>
   <link rel="stylesheet" href="style.css">
 
+  <style>
+    /* Tambahan styling */
+    p {
+      text-indent: 2em; /* menjorok ke kanan */
+      text-align: justify; /* rapi kiri kanan */
+    }
+    ol {
+      margin-left: 2em; /* beri jarak kiri */
+    }
+    ol li {
+      margin-bottom: 0.5em; /* jarak antar poin */
+      text-align: justify;
+    }
+
+    /* Gambar responsif di tengah */
+    .tentang-img {
+      display: block;
+      max-width: 80%;   /* default di HP */
+      height: auto;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+
+    /* Tablet / desktop sedang */
+    @media (min-width: 768px) {
+      .tentang-img {
+        max-width: 50%;
+      }
+    }
+
+    /* Desktop lebar */
+    @media (min-width: 1200px) {
+      .tentang-img {
+        max-width: 40%;
+      }
+    }
+  </style>
+
+  <script>
+    // Fungsi untuk membaca teks
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = "id-ID"; // bahasa Indonesia
+        window.speechSynthesis.cancel(); // hentikan suara sebelumnya
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Browser tidak mendukung Text-to-Speech.");
+      }
+    }
+
+    // --- 1. Baca otomatis saat web dibuka ---
+    window.addEventListener("load", function () {
+      speak("Selamat datang di Sistem Pelayanan Hak Istri dan Anak Pasca Perceraian, Sephia Paper.");
+    });
+
+    // --- 2. Baca teks yang di-block ---
+    document.addEventListener("mouseup", function () {
+      let selectedText = window.getSelection().toString().trim();
+      if (selectedText) {
+        speak(selectedText);
+      }
+    });
+  </script>
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,7 +79,7 @@
     <div class="header-banner">
       <img src="header-sephia.png" alt="Header Sephia Paper">
     </div>
-        <nav>
+    <nav>
       <ul>
         <li><a href="index.html">Beranda</a></li>
         <li><a href="layanan.html">Layanan Sephia Paper</a></li>
@@ -22,30 +87,30 @@
       </ul>
     </nav>
   </header>
+
   <main>
     <section>
       <h2>Tentang Sephia Paper</h2>
 
       <!-- Gambar di atas uraian -->
-    <img src="peluncuran.png" alt="Tentang Sephia Paper" class="tentang-img">
+      <img src="peluncuran.png" alt="Tentang Sephia Paper" class="tentang-img">
     
       <p>
-Sephia Paper (Sistem Pelayanan Hak Istri dan Anak Pasca-Perceraian) berfokus pada perlindungan hak-hak perempuan dan anak setelah perceraian. 
-Melalui kerja sama dengan Pemerintah Kabupaten Kebumen, program ini menyediakan layanan advokasi dan pendampingan hukum bagi mereka yang rentan kehilangan hak.
-Sistem ini memastikan hak-hak dasar seperti nafkah, tempat tinggal, dan hak asuh anak tetap terlindungi pasca-perceraian. 
-Inovasi ini mengedepankan asas keadilan, kepastian, dan kemanfaatan hukum agar perempuan dan anak tidak menjadi korban dalam proses hukum.
-Ketua PA Kebumen Ariani, S.Ag., M.H., menegaskan inovasi ini sejalan dengan visi Mahkamah Agung untuk mewujudkan peradilan yang ramah terhadap kelompok rentan.
-“Kami berkomitmen menghadirkan layanan hukum yang adaptif dan solutif. Sephia Paper adalah bukti nyata kolaborasi dan inovasi kami menjawab kebutuhan masyarakat, khususnya perempuan dan anak, untuk mendapatkan keadilan yang sejati,” ujar Ariani.
-Peluncuran inovasi ini menjadi langkah strategis menuju transformasi peradilan agama yang lebih modern, memanfaatkan teknologi untuk mempermudah akses keadilan. 
-Ke depan, PA Kebumen berharap peradilan agama semakin inklusif dan berpihak pada perlindungan hak asasi manusia, terutama bagi kelompok rentan, serta mengedepankan keadilan substantif yang humanis
-
+        Sephia Paper (Sistem Pelayanan Hak Istri dan Anak Pasca-Perceraian) berfokus pada perlindungan hak-hak perempuan dan anak setelah perceraian. 
+        Melalui kerja sama dengan Pemerintah Kabupaten Kebumen, program ini menyediakan layanan advokasi dan pendampingan hukum bagi mereka yang rentan kehilangan hak.
+        Sistem ini memastikan hak-hak dasar seperti nafkah, tempat tinggal, dan hak asuh anak tetap terlindungi pasca-perceraian. 
+        Inovasi ini mengedepankan asas keadilan, kepastian, dan kemanfaatan hukum agar perempuan dan anak tidak menjadi korban dalam proses hukum.
+        Ketua PA Kebumen Ariani, S.Ag., M.H., menegaskan inovasi ini sejalan dengan visi Mahkamah Agung untuk mewujudkan peradilan yang ramah terhadap kelompok rentan.
+        “Kami berkomitmen menghadirkan layanan hukum yang adaptif dan solutif. Sephia Paper adalah bukti nyata kolaborasi dan inovasi kami menjawab kebutuhan masyarakat, khususnya perempuan dan anak, untuk mendapatkan keadilan yang sejati,” ujar Ariani.
+        Peluncuran inovasi ini menjadi langkah strategis menuju transformasi peradilan agama yang lebih modern, memanfaatkan teknologi untuk mempermudah akses keadilan. 
+        Ke depan, PA Kebumen berharap peradilan agama semakin inklusif dan berpihak pada perlindungan hak asasi manusia, terutama bagi kelompok rentan, serta mengedepankan keadilan substantif yang humanis
       </p>
     </section>
   </main>
 
- <footer>
+  <footer>
     <p>&copy; 2025 Pengadilan Agama Kebumen | Sistem Pelayanan Hak Istri dan Anak Pasca Perceraian (Sephia Paper)</p>
-    <p>Alamat: Jl. Indrakila No. 42, Kebumen, Jawa Tengah | Telp: (0287) 381741| Website: <a href="https://www.pa-kebumen.go.id" target="_blank">pa-kebumen.go.id</a></p>
+    <p>Alamat: Jl. Indrakila No. 42, Kebumen, Jawa Tengah | Telp: (0287) 381741 | Website: <a href="https://www.pa-kebumen.go.id" target="_blank">pa-kebumen.go.id</a></p>
   </footer>
 </body>
 </html>
